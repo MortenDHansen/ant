@@ -30,6 +30,7 @@ jobs:
             GOOS=linux GOARCH=amd64 go build -o dist/linux-amd64/ant ./main.go
           elif [[ "${{ matrix.os }}" == "macos" ]]; then
             GOOS=darwin GOARCH=arm64 go build -o dist/macos-arm64/ant ./main.go
+          fi
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
