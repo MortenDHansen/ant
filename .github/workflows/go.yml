@@ -28,7 +28,7 @@ jobs:
           mkdir -p dist
           if [[ "${{ matrix.os }}" == "linux" ]]; then
             GOOS=linux GOARCH=amd64 go build -o dist/linux-amd64/ant ./main.go
-          elif
+          elif [[ "${{ matrix.os }}" == "macos" ]]; then
             GOOS=darwin GOARCH=arm64 go build -o dist/macos-arm64/ant ./main.go
 
       - name: Upload build artifacts
